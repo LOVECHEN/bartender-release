@@ -64,10 +64,9 @@ jobs:
               local zip="Bartender-${ver}.${build}.zip"
               if ! curl -fL --retry 3 "$url" -o "$zip"; then echo "下载失败 $url, skip"; rm -f "$zip"; echo "::endgroup::"; continue; fi
               sha256sum "$zip" > SHA256SUMS.txt
-              local rnotes; rnotes="$(dirname "$url")/rnotes.html"
               local notes
-              notes="$(printf '## Bartender for macOS\n\n| | |\n|---|---|\n| **App** | Bartender（`com.surteesstudios.Bartender`） |\n| **版本** | %s（build %s） |\n| **通道** | %s |\n| **平台** | macOS 14.0+（universal） |\n| **官方源** | `%s`（Sparkle appcast，EdDSA 签名） |\n| **更新说明** | %s |\n| **文件** | `%s` |\n\n> 官方原版，未经任何修改，逐字节镜像自官方 `downloads.macbartender.com`。仅作版本归档/离线留存。\n\n**SHA-256**\n```\n%s\n```\n' \
-                "$ver" "$build" "$label" "$feed" "$rnotes" "$zip" "$(cat SHA256SUMS.txt)")"
+              notes="$(printf '## Bartender for macOS\n\n| | |\n|---|---|\n| **App** | Bartender（`com.surteesstudios.Bartender`） |\n| **版本** | %s（build %s） |\n| **通道** | %s |\n| **平台** | macOS（universal） |\n| **文件** | `%s` |\n\n> 官方原版，未经任何修改，逐字节镜像。仅作版本归档 / 离线留存。\n\n**SHA-256**\n```\n%s\n```\n' \
+                "$ver" "$build" "$label" "$zip" "$(cat SHA256SUMS.txt)")"
               local latest="--latest=false"
               if [ "$mark_latest" = "yes" ] && [ "$tag" = "$newest_tag" ]; then latest="--latest=true"; fi
               gh release create "$tag" -R "$GITHUB_REPOSITORY" \
@@ -81,9 +80,10 @@ jobs:
             echo "::endgroup::"
           }
 
-          # 生产通道标记 latest; 测试/beta 通道不抢 latest
+          # B7 生产标记 latest; B7 beta 与 B6(旧大版本)不抢 latest
           mirror_channel "B7 stable" "b7"     "https://downloads.macbartender.com/Bartender7/updates/AppcastB7.xml"     yes
           mirror_channel "B7 beta"   "b7beta" "https://downloads.macbartender.com/Bartender7/updates/TestAppcastB7.xml" no
+          mirror_channel "B6 stable" "b6"     "https://www.macbartender.com/B2/updates/AppcastB6.xml"                   no
 
       - name: Refresh MIRRORED.md manifest (keep-alive)
         if: always()

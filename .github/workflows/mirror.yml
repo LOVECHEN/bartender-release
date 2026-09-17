@@ -101,10 +101,11 @@ jobs:
             gh release list -R "$GITHUB_REPOSITORY" --limit 300 --json tagName,name,createdAt \
               --jq 'sort_by(.tagName)|reverse|.[]|"| \(.tagName|split("-")[0]) | \(.name) | \(.tagName) | \(.createdAt[0:16]|sub("T";" ")) |"'
           } > MIRRORED.md
-          if ! git diff --quiet -- MIRRORED.md 2>/dev/null; then
-            git config user.name  "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add MIRRORED.md && git commit -m "chore: refresh mirrored manifest" && git push
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add MIRRORED.md
+          if ! git diff --cached --quiet -- MIRRORED.md; then
+            git commit -m "chore: refresh mirrored manifest" && git push
           else
             echo "MIRRORED.md 无变化"
           fi

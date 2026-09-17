@@ -1,0 +1,110 @@
+name: mirror
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'   # 每 6 小时检查官方 Sparkle appcast
+  workflow_dispatch:
+    inputs:
+      max_per_run:
+        description: '每通道本次最多新建多少 Release（其余留给后续定时补齐）'
+        default: '8'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Mirror · Bartender 7 (stable + beta appcast)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MAX_PER_RUN: ${{ github.event.inputs.max_per_run || '8' }}
+        run: |
+          set -euo pipefail
+
+          # 解析 Sparkle appcast（Bartender 的 version/shortVersionString 是 <item> 子元素, 非 enclosure 属性）
+          parse_feed () {
+            python3 - "$1" <<'PY'
+          import re, sys
+          xml = open(sys.argv[1], encoding='utf-8', errors='replace').read()
+          for item in re.findall(r'<item>(.*?)</item>', xml, re.S):
+              g = lambda p: (re.search(p, item, re.S) or [None, ''])[1].strip()
+              ver   = g(r'<sparkle:shortVersionString>([^<]+)')
+              build = g(r'<sparkle:version>([^<]+)')
+              url   = (re.search(r'<enclosure\b[^>]*\burl="([^"]+)"', item) or [None, ''])[1]
+              if ver and build and url:
+                  print(f"{ver}\t{build}\t{url}")
+          PY
+          }
+
+          # 通道: label 前缀 feed  是否标记 latest
+          mirror_channel () {
+            local label="$1" prefix="$2" feed="$3" mark_latest="$4"
+            echo "::group::channel=$label"
+            curl -fsSL --retry 3 "$feed" -o feed.xml
+            parse_feed feed.xml > items.tsv || true
+            if [ ! -s items.tsv ]; then echo "$label feed 空/解析失败, 跳过"; echo "::endgroup::"; return 0; fi
+
+            # Bartender appcast 为升序(旧版在前), 故按 build(第2列)数值降序取最高版作为 latest
+            local newest_tag="${prefix}-$(sort -t"$(printf '\t')" -k2,2 -nr items.tsv | head -n1 | awk -F'\t' '{print $1"."$2}')"
+            local made=0
+            while IFS=$'\t' read -r ver build url; do
+              local tag="${prefix}-${ver}.${build}"
+              if gh release view "$tag" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then echo "skip $tag"; continue; fi
+              if [ "$made" -ge "$MAX_PER_RUN" ]; then echo "$label 达 max_per_run"; break; fi
+              echo "::group::$tag"
+              local zip="Bartender-${ver}.${build}.zip"
+              if ! curl -fL --retry 3 "$url" -o "$zip"; then echo "下载失败 $url, skip"; rm -f "$zip"; echo "::endgroup::"; continue; fi
+              sha256sum "$zip" > SHA256SUMS.txt
+              local rnotes; rnotes="$(dirname "$url")/rnotes.html"
+              local notes
+              notes="$(printf '## Bartender for macOS\n\n| | |\n|---|---|\n| **App** | Bartender（`com.surteesstudios.Bartender`） |\n| **版本** | %s（build %s） |\n| **通道** | %s |\n| **平台** | macOS 14.0+（universal） |\n| **官方源** | `%s`（Sparkle appcast，EdDSA 签名） |\n| **更新说明** | %s |\n| **文件** | `%s` |\n\n> 官方原版，未经任何修改，逐字节镜像自官方 `downloads.macbartender.com`。仅作版本归档/离线留存。\n\n**SHA-256**\n```\n%s\n```\n' \
+                "$ver" "$build" "$label" "$feed" "$rnotes" "$zip" "$(cat SHA256SUMS.txt)")"
+              local latest="--latest=false"
+              if [ "$mark_latest" = "yes" ] && [ "$tag" = "$newest_tag" ]; then latest="--latest=true"; fi
+              gh release create "$tag" -R "$GITHUB_REPOSITORY" \
+                --title "$label · Bartender $ver ($build)" --notes "$notes" $latest \
+                "$zip" SHA256SUMS.txt
+              rm -f "$zip" SHA256SUMS.txt
+              made=$((made+1))
+              echo "::endgroup::"
+            done < items.tsv
+            echo "$label: 新建 $made"
+            echo "::endgroup::"
+          }
+
+          # 生产通道标记 latest; 测试/beta 通道不抢 latest
+          mirror_channel "B7 stable" "b7"     "https://downloads.macbartender.com/Bartender7/updates/AppcastB7.xml"     yes
+          mirror_channel "B7 beta"   "b7beta" "https://downloads.macbartender.com/Bartender7/updates/TestAppcastB7.xml" no
+
+      - name: Refresh MIRRORED.md manifest (keep-alive)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          {
+            echo "# 已归档版本"
+            echo
+            echo "> 由 mirror workflow 自动刷新 · $(date -u '+%Y-%m-%d %H:%M UTC')"
+            echo
+            echo "| 通道 | 标题 | tag | 发布(UTC) |"
+            echo "|---|---|---|---|"
+            gh release list -R "$GITHUB_REPOSITORY" --limit 300 --json tagName,name,createdAt \
+              --jq 'sort_by(.tagName)|reverse|.[]|"| \(.tagName|split("-")[0]) | \(.name) | \(.tagName) | \(.createdAt[0:16]|sub("T";" ")) |"'
+          } > MIRRORED.md
+          if ! git diff --quiet -- MIRRORED.md 2>/dev/null; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add MIRRORED.md && git commit -m "chore: refresh mirrored manifest" && git push
+          else
+            echo "MIRRORED.md 无变化"
+          fi

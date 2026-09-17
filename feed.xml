@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Bartender 6 Changelog</title>
+		<link>http://macbartender.com/B2/updates/AppcastB6.xml</link>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+		<item>
+			<title>Version 6.0.0</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>600000</sparkle:version>
+			<sparkle:shortVersionString>6.0.0</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-0-0/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>September 13, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-0-0/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFH2p482/EsOcyPFvZnRnJDwMGdJdAhRrcn8AOE0fbu4XFDIu+DmK3dnvpw==" sparkle:edSignature="I/Pj6gMbzc1Joj5i26Xas6OcuAt+aAnZdzxTrBQMAbC/ASbkDfKNFlQSupnILaARCV9wT/vSfpU8h8dA+Y6fCg==" length="29924006" />
+		</item>
+		<item>
+			<title>Version 6.0.1</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>600010</sparkle:version>
+			<sparkle:shortVersionString>6.0.1</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-0-1/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>September 17, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-0-1/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFClxcd2K9/D2FFrp5vgv50NQB+ExAhRUqK9qA2fnOxql0USnp5pF7I8lZQ==" sparkle:edSignature="61ezGOs3XmVwWjux+5o55cjufNJTXoU7Vo2d9+BcuMd8zu+czEHdfJS7qD8Sk6PW68q46NgJ00j/ng1tMXiqAQ==" length="29985897" />
+		</item>
+		<item>
+			<title>Version 6.0.3</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>600030</sparkle:version>
+			<sparkle:shortVersionString>6.0.3</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-0-3/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>September 19, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-0-3/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFCFM39RrzY3LYcEgU97PmUYnQkiCAhRx+/Li3sOI92DQ1LkuLTfhOKJHlQ==" sparkle:edSignature="zdvRXXHEefhSoa/oDWGpAGuClhi13PcveLWq0rfDBdFM/M6hjmTwNX4wSRgwXH/d10zITl1PF2YQCFPhR6+4Aw==" length="30022773" />
+		</item>
+		<item>
+			<title>Version 6.0.4</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>600040</sparkle:version>
+			<sparkle:shortVersionString>6.0.4</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-0-4/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>September 24, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-0-4/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFD8tLyvTVQjPRVULrskhMnBB33PuAhRVAuLPaYR/m0L9c1m/rG6MjzeDqw==" sparkle:edSignature="hDwjM6bKiCO7HkzCGsixnoUpVxHhDL8C3EHcAnTGOgxiaNtXuK3UuBaIdA5HwsU9jxxiTam247XwXE8Nc95lAw==" length="29970675" />
+		</item>
+		<item>
+			<title>Version 6.1.0</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>610000</sparkle:version>
+			<sparkle:shortVersionString>6.1.0</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-1-0/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>September 29, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-1-0/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCOnNP2ArjISaLjWL4dVl0sW2u8rAIUFchdBWvxyjbkt34aIaUKC+0veHU=" sparkle:edSignature="Zq9oBdz1sfO9/iFwHivXynJORCP6HRy6V0WcESwNy1cXnuYgi2KoWTWu2p373HgeTC1i5BARGeGqOuuIiKKeDg==" length="30014319" />
+		  </item>
+		  <item>
+			<title>Version 6.1.1</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>610101</sparkle:version>
+			<sparkle:shortVersionString>6.1.1</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-1-1/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>October 14, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-1-1/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFGrOWcVAeQ8JTfpU7vnN031XZHRTAhR4C4+Kr1mqImqwD2n1tolIFX7wLw==" sparkle:edSignature="XyezEZtLn4GRDxKUv/0HiJ9rLfNw6MJKDMztKKSqB5OJRzCdXLCYrW/VKlBSh1ITTPOGkXAbEcMLa8GknP6fCA==" length="30045276" />
+		  </item>
+		  <item>
+			<title>Version 6.1.2</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>610200</sparkle:version>
+			<sparkle:shortVersionString>6.1.2</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-1-2/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>October 27, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-1-2/Bartender%206.zip"
+				type="application/octet-stream"
+				sparkle:dsaSignature="MCwCFE5vkVoZGJN2ukDzQhaOt2LU5AlkAhRo+tovzCUvT/CUrUP4YefWIRtbPQ=="
+				sparkle:edSignature="/PkYR1eO6R7C1yAoZW/KOGSz0tA/Gw1Pobh+LToCk1JkF0jlQWgVG+n1nmUid/79yQ4Vc4sC/HtSijey1T3ECQ=="
+				length="30056813" />
+		</item>
+		<item>
+			<title>Version 6.1.3</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>610300</sparkle:version>
+			<sparkle:shortVersionString>6.1.3</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-1-3/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>October 31, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-1-3/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFFpkDeBLH4INNS/WUtccF0JCb0/wAhRb1dNJStqA3wT2LCbmv0eGbEkPZw==" sparkle:edSignature="BP5+bVHQd6azgMaRAtPZsqC01endRmgQ1QVnfPAcCl5EawHyUYyIQMcfcFkhyJHbj5R0VsFdgiClm7SIJd9bCA==" length="30058776" />
+		</item>
+		<item>
+			<title>Version 6.2.1</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>620100</sparkle:version>
+			<sparkle:shortVersionString>6.2.1</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-2-1/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>November 18, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-2-1/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFAEao/yx98Tpns/IVXUBuss+IGyRAhRnCu/nsdF0ErJv4vHBc39gFLX5jA==" sparkle:edSignature="COnoJ4dcveZZh+/vm+dBUe49lfg+tGTo0JWqO607D5pvAS7z/WNrzQAEYn+VCjp4hl+AIXdNygmTCmktMtJhAw==" length="30013943" />
+		  </item>
+		 <item>
+			<title>Version 6.3.0</title>
+			<sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+			<sparkle:version>630000</sparkle:version>
+			<sparkle:shortVersionString>6.3.0</sparkle:shortVersionString>
+			<sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-3-0/rnotes.html</sparkle:releaseNotesLink>
+			<pubDate>December 11, 2025 09:45:00 +0000</pubDate>
+			<enclosure url="https://macbartender.com/B2/updates/6-3-0/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFDNyAlGTyjLR40rePgb12AiywGzOAhR5U1Xt2df0ZMG1GiKS5d9BGox24w==" sparkle:edSignature="4d/BQeKP2hM0sWAbPXYLFy+K8oE8VX438SEINqEBeC6uCPY8gZ3uZkJtr6U+hwrGZg/Oan2WWTdIembqPc77Dw==" length="30090145" />
+		  </item>
+		  <item>
+            <title>Version 6.3.1</title>
+            <sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+            <sparkle:version>631000</sparkle:version>
+            <sparkle:shortVersionString>6.3.1</sparkle:shortVersionString>
+            <sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-3-1/rnotes.html</sparkle:releaseNotesLink>
+            <pubDate>January 21, 2026 09:45:00 +0000</pubDate>
+            <enclosure url="https://macbartender.com/B2/updates/6-3-1/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MC0CFCHkHfHLBSBwzIfUjJkiudETPx9dAhUAmE8mz4QS7YosPMbkgCj50i4uUfE=" sparkle:edSignature="SdSnmYFzq+6InwJWp/n56msYIB76xecDUOsSA1P0jp1RjuCWAIcOE4ydjhxPFf+OXS9TLJwD6uBhOwzREO1JDA==" length="28757493" />
+          </item>
+          <item>
+            <title>Version 6.4.1</title>
+            <sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+            <sparkle:version>641000</sparkle:version>
+            <sparkle:shortVersionString>6.4.1</sparkle:shortVersionString>
+            <sparkle:releaseNotesLink>https://macbartender.com/B2/updates/6-4-1/rnotes.html</sparkle:releaseNotesLink>
+            <pubDate>February 03, 2026 09:45:00 +0000</pubDate>
+            <enclosure url="https://macbartender.com/B2/updates/6-4-1/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFCZiq5JvSKwy86HkgJ/m/LXLbXz0AhRVLmZu1xbhIqUiYcJbsrEfmhX+6g==" sparkle:edSignature="BlihAhIXcbHjhkzu3iVU+uxtvBj4cZ5g9dKHDUpuwUHuQq7WIs6aRgJpJmMAoK47mCk0TkcO7ntgRBDmAQnXCQ==" length="28554663" />
+          </item>
+          <item>
+            <title>Version 6.5.1</title>
+            <sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+            <sparkle:version>651000</sparkle:version>
+            <sparkle:shortVersionString>6.5.1</sparkle:shortVersionString>
+            <sparkle:releaseNotesLink>https://downloads.macbartender.com/B2/updates/6-5-1/rnotes.html</sparkle:releaseNotesLink>
+            <pubDate>May 12, 2026 09:45:00 +0000</pubDate>
+            <enclosure url="https://downloads.macbartender.com/B2/updates/6-5-1/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MCwCFCzJAfl459QVYQu8wtkb2Qg4O3kcAhQjoFiAA3xQmDKU4rKBAFGwfUOUdQ==" sparkle:edSignature="ehRXzMdho6qB+oBtupzrzSYzHN2y4Aeo8fRrVFUfOzDl0cV2uuuu+V5Qmq5f/YC1WM4+i5gCp9s2hmWtbZRDCw==" length="53847093" />
+          </item>
+          <item>
+            <title>Version 6.5.2</title>
+            <sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+            <sparkle:version>652000</sparkle:version>
+            <sparkle:shortVersionString>6.5.2</sparkle:shortVersionString>
+            <sparkle:releaseNotesLink>https://downloads.macbartender.com/B2/updates/6-5-2/rnotes.html</sparkle:releaseNotesLink>
+            <pubDate>May 22, 2026 09:45:00 +0000</pubDate>
+            <enclosure url="https://downloads.macbartender.com/B2/updates/6-5-2/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MC0CFDB5G4Ox8nI0BQWDJnWExgpV67LWAhUAmE+JPkmeMDbiwqSp5sEElB4HmRw=" sparkle:edSignature="YGhIcJeSOzMxjHBAte/VSp56gqqhN4pV4M+AOJxL9lA6FrLzf2bcerY6p9MxLG1cYUW3xHoqs9edAeRvyLXJCA==" length="54043401" />
+          </item>
+	<item>
+    <title>Version 6.6.1</title>
+    <sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+    <sparkle:version>661000</sparkle:version>
+    <sparkle:shortVersionString>6.6.1</sparkle:shortVersionString>
+    <sparkle:releaseNotesLink>https://downloads.macbartender.com/B2/updates/6-6-1/rnotes.html</sparkle:releaseNotesLink>
+    <pubDate>July 28, 2026 09:45:00 +0000</pubDate>
+    <enclosure url="https://downloads.macbartender.com/B2/updates/6-6-1/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCWObS0lX3ONTb9ZkfaiVG+uz0uAQIUME3CHU55jOV41mcZU4h3z+Xpgks=" sparkle:edSignature="8VQJNEkUouzDgN6SyfdUQFfUtcBU0KzQSjCDpMCBt3bRE2xQG1dkjoPeXlm+Lbl16Bg78LV6hcQqIFSRCPyKBw==" length="53799969" />
+  </item>
+<item>
+    <title>Version 6.6.2</title>
+    <sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+    <sparkle:version>662000</sparkle:version>
+    <sparkle:shortVersionString>6.6.2</sparkle:shortVersionString>
+    <sparkle:releaseNotesLink>https://downloads.macbartender.com/B2/updates/6-6-2/rnotes.html</sparkle:releaseNotesLink>
+    <pubDate>July 30, 2026 09:45:00 +0000</pubDate>
+    <enclosure url="https://downloads.macbartender.com/B2/updates/6-6-2/Bartender%206.zip" type="application/octet-stream" sparkle:dsaSignature="MC0CFEfhnpYcpLoLhJO56xPyTPo25GQ/AhUAhcXE2u040kVd6/WQlpS1epw68D8=" sparkle:edSignature="s/mRrpiVL9iddOemfstjeHRBtCNFX+EcS5AQktA1jCJosbs9zcT1635bctnnmIzK556FK/n1Jt+9aEo6fGaKAQ==" length="53798566" />
+  </item>
+</channel>
+</rss>
